@@ -1,33 +1,63 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Login and Registration </title>
-</head>
-<body>
-<h1>Login</h1>
+<!DOCTYPE html>   
+<html>   
+<head>  
+<meta name="viewport" content="width=device-width, initial-scale=1">  
+<title> Login Page </title>  
+<style>   
+Body {  
+  font-family: Calibri, Helvetica, sans-serif;  
+  background-color: pink;  
+}  
+button {   
+       background-color: #04010b;   
+       width: 100%;  
+        color: orange;   
+        padding: 15px;   
+        margin: 10px 0px;   
+        border: none;   
+        cursor: pointer;   
+         }   
+ form {   
+        #border: 3px solid #f1f1f1;   
+    }   
+ input[type=text], input[type=password] {   
+        width: 100%;   
+        margin: 8px 0;  
+        padding: 12px 20px;   
+        display: inline-block;   
+        border: 2px solid green;   
+        box-sizing: border-box;   
+    }  
+ button:hover {   
+        opacity: 0.7;   
+    }   
+  .cancelbtn {   
+        width: auto;   
+        padding: 10px 18px;  
+        margin: 10px 5px;  
+    }   
+        
+     
+ 
+</style>   
+</head>    
+<body>    
+    <center> <h1>  Login </h1> </center>   
+    <%= form_with(scope: :session, url: login_path, local: true) do |f| %>
 
-<form action="/sessions" method= "POST">
-<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
-<input type="email" name="login[email]" placeholder="email">
-<input type="password" name="login[password]" placeholder="password">
-<input type="submit" name="submit" placeholder="submit">
-</form>
-
-<h1>Registration</h1>
-
-<form action="/users" method= "POST">
-<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
-<input type="name" name="user[name]" placeholder="name">
-<input type="email" name="user[email]" placeholder="email">
-<input type="password" name="user[password]" placeholder="password">
-<input type="password" name="user[password_confirmation]" placeholder="password_confirmation">
-
-<input type="submit" name="submit" placeholder="submit">
-</form>
-
-
-
-</body>
-
-</html>
+       <h1> <p> <%= f.label :UserName %></br>
+    
+        <%= f.text_field :username %> </p></h1>
+    
+       <h1> <p> <%= f.label :Password %></br>
+    
+        <%= f.password_field :password %> </p></h1>
+    
+        <h3>
+    
+         <%= f.submit "Log in" %> </h3>
+    
+         <% end %>    
+</body>     
+</html>  
 

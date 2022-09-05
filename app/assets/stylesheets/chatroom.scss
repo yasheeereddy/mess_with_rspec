@@ -1,3 +1,75 @@
 // Place all the styles related to the chatroom controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+
+
+body { 
+    background-image: image-url('/assets/images/todo.png'); 
+  }
+ 
+  html {
+    background-color: #10151B;
+    background: url(https://unsplash.com/s/photos/to-do-list) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  
+  body {
+    font-family: "Oswald", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+  }
+  
+  h1 {
+    line-height: .95;
+    color: #1a1548;
+    font-weight: 900;
+    font-size: 150px;
+    text-transform: uppercase;
+  
+  }
+  
+  .center {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 581px;
+    height: 50%;
+  }
+  
+  .btn {
+    margin: 0 auto;
+    width: 170px;
+    height: 60px;
+    padding: 6px 0 0 3px;
+    border: 2px solid #152121;
+    border-radius: 2px;
+    background: none;
+    font-size: 16px;
+    line-height: 54px;
+    color: rgb(66, 15, 117);
+    letter-spacing: .25em;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    vertical-align: middle;
+    text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-transition: background .4s, color .4s;
+    transition: background .4s, color .4s;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background: #a45b96;
+    color: #10151B;
+  }

@@ -1,7 +1,17 @@
 Rails.application.routes.draw do
+  get 'tasks', to:'tasks#index'
+  resources :tasks, except: [:index]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'chatroom#index'
   get 'login', to: 'sessions#new'
-  get 'register', to: 'sessions#regis'
+  post 'login', to: 'sessions#create'
+  get 'signup', to: 'users#new'
+  resources :users, except: [:new ]
+  
+  delete 'logout', to: 'sessions#destroy'
+  get 'logout', to: 'sessions#destroy'
+
+
+
 end
 
