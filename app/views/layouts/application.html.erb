@@ -22,13 +22,11 @@
      
 <div class="ui inverted menu">
 <div class="ui container">
-<a class="item">
-  Categories
-</a>
-<a class="item">
-  Reminders
-</a>
 <% if logged_in? %>
+<div class="item">
+<div class="ui primary button"><%= link_to 'Categories', categories_path %></div>
+</div>
+
 <div class="right menu">
   <div class="item">
   <div class="ui primary button" ><%= link_to 'Log Out', logout_path, method: :delete%></div>

@@ -1,14 +1,18 @@
+
+<div class="container-fluid mt-3">
+<h1>Category: <%= @task.category.category %> </h1>
 <p id="notice"><%= notice %></p>
 
-<p>
+<p><h2><i>
   <strong>Name:</strong>
-  <%= @task.name %>
+  <%= @task.name %></i></h2>
 </p>
 
-<p>
+<p><h3>
   <strong>Status:</strong>
-  <%= @task.status %>
+  <%= @task.status %></h3>
 </p>
-
+<h3>
 <%= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'Back', tasks_path %>
+<%= link_to 'Back', tasks_path %></h3>
+</div>

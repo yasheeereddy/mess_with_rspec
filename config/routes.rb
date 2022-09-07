@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+ 
   get 'tasks', to:'tasks#index'
   resources :tasks, except: [:index]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
@@ -10,6 +11,9 @@ Rails.application.routes.draw do
   
   delete 'logout', to: 'sessions#destroy'
   get 'logout', to: 'sessions#destroy'
+
+  resources :categories
+  get 'categories', to: 'categories#new'
 
 
 

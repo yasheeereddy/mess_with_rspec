@@ -8,6 +8,7 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import '@doabit/semantic-ui-sass/src/scss/semantic-ui.scss'
+import 'bootstrap'
 
 Rails.start()
 Turbolinks.start()
