@@ -1,9 +1,36 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Category:</strong>
-  <%= @category.category %>
-</p>
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+<h1>To-Do List</h1>
+
+
+
+<table border="1">
+  <thead>
+    <tr>
+      <th><h2>Task Name</h2></th>
+      <th><h2>Done/Not</h2></th>
+      <th colspan="4"> <h2>Actions</h2></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tasks.each do |task| %>
+      <tr>
+        <td><h2><%= task.name%></h2></td>
+        <td><h2><%= task.status %></h2></td>
+        <td><%= link_to 'Show', task,class: 'btn' %></td>
+        <td><%= link_to 'Edit', edit_task_path(task),class: 'btn' %></td>
+        <td><%= button_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' },class: 'btn'%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+
+
+
+<h2><%= link_to 'New Task', new_task_path %></h2>

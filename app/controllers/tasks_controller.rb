@@ -7,7 +7,21 @@ class TasksController < ApplicationController
     p current_user
     p current_user.id
     p logged_in?
-    @tasks = Task.all
+    @tasks = Task.where(user_id: current_user.id) 
+    p "total tasks"
+    p @tasks
+    p "****"
+    @categories = Category.all
+
+
+
+    # cate = params[:cate]
+
+    # if !cate.nil?
+    #   @tasks = Task.where(:category_id => cate)
+    # else
+    #   @tasks = Task.all
+    # end
   end
 
   # GET /tasks/1 or /tasks/1.json
@@ -26,7 +40,11 @@ class TasksController < ApplicationController
   # POST /tasks or /tasks.json
   def create
     @task = Task.new(task_params)
-
+    p "*"*30
+    p @task
+    p "*"*30
+    @task.user = current_user
+    p @task
     respond_to do |format|
       if @task.save
         format.html { redirect_to task_url(@task), notice: "Task was successfully created." }

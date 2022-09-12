@@ -24,7 +24,9 @@
 <div class="ui container">
 <% if logged_in? %>
 <div class="item">
-<div class="ui primary button"><%= link_to 'Categories', categories_path %></div>
+<div class="ui primary button"><%= link_to 'Create Categories', categories_path %></div>
+<div class="ui secondary button"><%= link_to 'Go to all tasks', tasks_path %></div>
+
 </div>
 
 <div class="right menu">
