@@ -8,7 +8,7 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1 or /categories/1.json
   def show
-    @tasks = Task.where(user_id: current_user.id,category_id: params[:id] )
+    @tasks = Task.where(user_id: current_user,category_id: params[:id] )
     p "++++++++"
     p @tasks
     p "_______"
@@ -19,11 +19,9 @@ class CategoriesController < ApplicationController
     @category = Category.new
   end
 
-  # GET /categories/1/edit
   def edit
   end
 
-  # POST /categories or /categories.json
   def create
     @category = Category.new(category_params)
 
@@ -38,7 +36,6 @@ class CategoriesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /categories/1 or /categories/1.json
   def update
     respond_to do |format|
       if @category.update(category_params)
@@ -50,8 +47,6 @@ class CategoriesController < ApplicationController
       end
     end
   end
-
-  # DELETE /categories/1 or /categories/1.json
   def destroy
     @category.destroy
 
@@ -62,12 +57,11 @@ class CategoriesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+  
     def set_category
       @category = Category.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def category_params
       params.require(:category).permit(:category)
     end

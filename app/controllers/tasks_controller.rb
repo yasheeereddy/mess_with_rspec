@@ -1,48 +1,28 @@
 class TasksController < ApplicationController
   before_action :set_task, only: %i[ show edit update destroy ]
 
-  # GET /tasks or /tasks.json
   def index
     # @tasks = Task.where(user_id: current_user.id)
-    p current_user
-    p current_user.id
+    #p current_user
     p logged_in?
-    @tasks = Task.where(user_id: current_user.id) 
-    p "total tasks"
+    @tasks = Task.where(user_id: current_user) 
     p @tasks
-    p "****"
     @categories = Category.all
-
-
-
-    # cate = params[:cate]
-
-    # if !cate.nil?
-    #   @tasks = Task.where(:category_id => cate)
-    # else
-    #   @tasks = Task.all
-    # end
   end
 
-  # GET /tasks/1 or /tasks/1.json
   def show
   end
 
-  # GET /tasks/new
   def new
     @task = Task.new
   end
 
-  # GET /tasks/1/edit
   def edit
   end
 
-  # POST /tasks or /tasks.json
   def create
     @task = Task.new(task_params)
-    p "*"*30
     p @task
-    p "*"*30
     @task.user = current_user
     p @task
     respond_to do |format|
@@ -56,7 +36,6 @@ class TasksController < ApplicationController
     end
   end
 
-  # PATCH/PUT /tasks/1 or /tasks/1.json
   def update
     respond_to do |format|
       if @task.update(task_params)
@@ -69,7 +48,6 @@ class TasksController < ApplicationController
     end
   end
 
-  # DELETE /tasks/1 or /tasks/1.json
   def destroy
     @task.destroy
 
@@ -80,12 +58,11 @@ class TasksController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_task
       @task = Task.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def task_params
       params.require(:task).permit(:name, :status, :category_id)
     end

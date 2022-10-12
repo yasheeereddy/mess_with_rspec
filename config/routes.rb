@@ -14,8 +14,13 @@ Rails.application.routes.draw do
 
   resources :categories
   get 'categories', to: 'categories#new'
-
-
+  namespace :api do
+    namespace :v1 do
+      resources :tasks, only: [:index, :show, :create, :destroy, :update]
+      resources :categories, only: [:index, :show, :create, :destroy, :update]
+      resources :sessions
+    end
+  end
 
 end
 
