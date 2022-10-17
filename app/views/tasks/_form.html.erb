@@ -1,7 +1,6 @@
 <%= form_with(model: task) do |form| %>
 
   <head>
-  <%= csrf_meta_tags %>
 
   <% if task.errors.any? %>
     <div id="error_explanation">
@@ -28,6 +27,7 @@
   <div class="field">
     <%= form.label :status %>
     <%= form.check_box :status %>
+    
   </div>
 
   <div class="actions">

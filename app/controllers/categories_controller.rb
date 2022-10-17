@@ -9,9 +9,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1 or /categories/1.json
   def show
     @tasks = Task.where(user_id: current_user,category_id: params[:id] )
-    p "++++++++"
     p @tasks
-    p "_______"
   end
 
   # GET /categories/new
