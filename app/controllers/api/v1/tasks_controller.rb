@@ -2,7 +2,6 @@ module Api
     module V1
       class TasksController < ApplicationController
     before_action :set_task, only: %i[ show edit update destroy ]
-  
 
     def index
       p logged_in?
@@ -11,11 +10,9 @@ module Api
       render json: @tasks
     end
   
-   
     def show
       render json: @task
     end
-  
 
     def edit
     end
@@ -29,8 +26,7 @@ module Api
         render json: @task.errors, status: :unprocessable_entity
       end
     end
-  
-   
+ 
     def update
       if @task.update(task_params)
         render json: @task
@@ -42,17 +38,11 @@ module Api
     def destroy
       @task.destroy
     end
-  
-
 
     private
-    
-
     def set_task
     @task = Task.find(params[:id])
-    end
-  
-  
+    end 
     def task_params
     params.require(:task).permit([:name, :status, :category_id, :user_id])
     end

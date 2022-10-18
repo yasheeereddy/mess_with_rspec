@@ -3,7 +3,6 @@ class TasksController < ApplicationController
   #before_action :require_user, only: [:index, :show, :edit ,:new]
 
   def index
-    # @tasks = Task.where(user_id: current_user.id)
     p current_user
     p logged_in?
     @tasks = Task.where(user_id: current_user) 

@@ -9,13 +9,13 @@ RSpec.describe TasksController, type: :controller do
   end
   describe "responds to" do
     it "responds to html by default" do
-      post :create, :params => { :task => { :name => "Task Name" , :status => "true"} }
+      post :create, :params => { :task => { :name => "Task Name" , :status => "true", :category_id => 1} }
       expect(response.media_type).to eq "text/html"
     end
 
     it "responds to custom formats when provided in the params" do
-      post :create, :params => { :task => { :name => "Task Name" , :status => "true"}, :format => :json }
-      expect(response.media_type).to eq "application/json"
+      post :create, :params => { :task => { :name => "Task Name" , :status => "true", :category_id => 1}, :format => :json }
+      expect(response.media_type).to eq "application/json" 
     end
   end
 end
