@@ -12,7 +12,7 @@ module Api
                 user = User.find_by(username: params[:session][:username])
                 if user && user.authenticate(params[:session][:password]) 
                     session[:user_id] = user.id
-                    flash[:notice] = "logged in successfuully"
+                    flash[:notice] = "logged in successfully"
                     redirect_to "/tasks"
                 else
                     flash.now[:alert] = "There is something wrong with your credentials"
