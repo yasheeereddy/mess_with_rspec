@@ -13,9 +13,12 @@ RSpec.describe User, type: :model do
       subject.email=nil
       expect(subject).to_not be_valid
     end
-    it "should contain a valid email" do
-      subject.email="yashee@email.com"
-      expect(subject).to be_valid
+    it "should be valid" do
+      addresses = %w[user@foo.COM A_US-ER@f.b.org frst.lst@foo.jp a+b@baz.cn]
+      addresses.each do |valid_address|
+        subject.email = valid_address
+        expect(subject).to be_valid
+      end
     end
   end
   context "Association" do

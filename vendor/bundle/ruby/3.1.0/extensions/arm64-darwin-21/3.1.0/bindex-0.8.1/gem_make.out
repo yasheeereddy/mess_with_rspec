@@ -1,5 +1,5 @@
 current directory: /Users/yasheereddy/ror/mess/vendor/bundle/ruby/3.1.0/gems/bindex-0.8.1/ext/skiptrace
-/Users/yasheereddy/.asdf/installs/ruby/3.1.2/bin/ruby -I /Users/yasheereddy/.asdf/installs/ruby/3.1.2/lib/ruby/3.1.0 -r ./siteconf20220927-419-w1m0qt.rb extconf.rb
+/Users/yasheereddy/.asdf/installs/ruby/3.1.2/bin/ruby -I /Users/yasheereddy/.asdf/installs/ruby/3.1.2/lib/ruby/3.1.0 -r ./siteconf20221020-6915-6d1jxh.rb extconf.rb
 creating Makefile
 
 current directory: /Users/yasheereddy/ror/mess/vendor/bundle/ruby/3.1.0/gems/bindex-0.8.1/ext/skiptrace
@@ -13,4 +13,4 @@ ld: warning: -undefined dynamic_lookup may not work with chained fixups
 
 current directory: /Users/yasheereddy/ror/mess/vendor/bundle/ruby/3.1.0/gems/bindex-0.8.1/ext/skiptrace
 make DESTDIR\= install
-/opt/homebrew/bin/ginstall -c -m 0755 cruby.bundle ./.gem.20220927-419-vf7vp5/skiptrace/internal
+/opt/homebrew/bin/ginstall -c -m 0755 cruby.bundle ./.gem.20221020-6915-vxzii9/skiptrace/internal

@@ -1,5 +1,5 @@
 current directory: /Users/yasheereddy/ror/mess/vendor/bundle/ruby/3.1.0/gems/ffi-1.15.5/ext/ffi_c
-/Users/yasheereddy/.asdf/installs/ruby/3.1.2/bin/ruby -I /Users/yasheereddy/.asdf/installs/ruby/3.1.2/lib/ruby/3.1.0 -r ./siteconf20220927-419-gd6ivg.rb extconf.rb
+/Users/yasheereddy/.asdf/installs/ruby/3.1.2/bin/ruby -I /Users/yasheereddy/.asdf/installs/ruby/3.1.2/lib/ruby/3.1.0 -r ./siteconf20221020-6915-z65v7j.rb extconf.rb
 checking for ffi_prep_closure_loc() in -lffi... yes
 checking for ffi_prep_cif_var()... yes
 checking for ffi_raw_call()... yes
@@ -41,4 +41,4 @@ ld: warning: -undefined dynamic_lookup may not work with chained fixups
 
 current directory: /Users/yasheereddy/ror/mess/vendor/bundle/ruby/3.1.0/gems/ffi-1.15.5/ext/ffi_c
 make DESTDIR\= install
-/opt/homebrew/bin/ginstall -c -m 0755 ffi_c.bundle ./.gem.20220927-419-qia4bh
+/opt/homebrew/bin/ginstall -c -m 0755 ffi_c.bundle ./.gem.20221020-6915-1oe2dc
