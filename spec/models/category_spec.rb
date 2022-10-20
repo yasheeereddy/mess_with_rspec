@@ -1,6 +1,9 @@
 require 'rails_helper'
 RSpec.describe Category, type: :model do
   subject { Category.new( id:"1", category: "home list")}
+  context "Association" do
+    it { should have_many(:tasks) }
+  end
   context "Validations" do
     it "is valid with valid attributes" do
       expect(subject).to be_valid
@@ -9,9 +12,6 @@ RSpec.describe Category, type: :model do
       subject.category=nil
       expect(subject).to_not be_valid
     end
-  end
-  context "Associations" do
-    it { should have_many(:tasks) }
   end
 end
 
