@@ -1,13 +1,9 @@
 require 'rails_helper'
 RSpec.describe Task, type: :model do
-  context "Associations" do
-    it { should belong_to(:user)}
-    it { should belong_to(:category)}
-  end
   context "Validations" do
-    subject { Task.new(name:"yashee", status:"true")}
+    subject { create(:task)}
     it "is not valid without a name" do
-      subject.name=nil
+      subject.name= nil
       expect(subject).to_not be_valid
     end
     it "is not valid without a status" do
@@ -15,5 +11,12 @@ RSpec.describe Task, type: :model do
       expect(subject).to_not be_valid 
     end  
   end 
+  context "Associations" do
+    it { should belong_to(:user)}
+    it { should belong_to(:category)}
+  end
 end
+
+
+
 

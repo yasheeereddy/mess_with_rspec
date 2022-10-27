@@ -1,6 +1,6 @@
 require 'rails_helper'
 RSpec.describe Category, type: :model do
-  subject { Category.new( id:"1", category: "home list")}
+  subject { create(:category) }
   context "Association" do
     it { should have_many(:tasks) }
   end
