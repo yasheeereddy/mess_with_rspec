@@ -43,6 +43,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'shoulda-matchers'
   gem 'rails-controller-testing'
+  gem 'faker'
   #gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'byebug', platform: :mri
 end
