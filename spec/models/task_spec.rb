@@ -11,16 +11,15 @@ RSpec.describe Task, type: :model do
       expect(subject).to_not be_valid 
     end  
     it "is valid with a unique name" do
-      task1 = create(:task, name: "eat food")
+      task1 = build(:task,:not_completed,name: "eat food")
       expect(task1).to be_valid  
     end  
     it "is valid with a unique user" do
-      task2 = create(:task)
+      task2 = build(:task, :completed)
       expect(task2).to be_valid  
     end
   end 
   context "Associations" do
     it { should belong_to(:user)}
-    it { should belong_to(:category)}
   end
 end

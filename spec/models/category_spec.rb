@@ -6,11 +6,11 @@ RSpec.describe Category, type: :model do
       expect(subject).to be_valid
     end
     it "is valid with a unique category name" do
-      category1 = create(:category)
+      category1 = create(:category,:must_category)
       expect(category1).to be_valid  
     end
-    it "is invalid with a common category name" do
-      category2 = create(:category, category: "grocery list") 
+    it "is invalid with a repeated category name" do
+      category2 = build(:category, category: "grocery list") 
       expect(category2).to be_valid  
     end
   end

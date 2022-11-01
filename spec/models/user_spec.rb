@@ -24,11 +24,11 @@ RSpec.describe User, type: :model do
       end
     end
     it "is invalid with a duplicate email" do
-      user1 = create(:user, email:"yash12@gmail.com")
+      user1 = build(:user, email:"yash12@gmail.com")
       expect(user1).to be_valid
     end
     it "is valid with a unique username" do
-      user2 = create(:user,username:"yashee", email: "yashee@gmail.com")
+      user2 = build(:user, :admin, email: "yashee@gmail.com")
       expect(user2).to be_valid
     end
   end
