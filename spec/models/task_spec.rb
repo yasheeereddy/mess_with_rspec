@@ -11,7 +11,7 @@ RSpec.describe Task, type: :model do
       expect(subject).to_not be_valid 
     end  
     it "is valid with a unique name" do
-      task1 = create(:task)
+      task1 = create(:task, name: "eat food")
       expect(task1).to be_valid  
     end  
     it "is valid with a unique user" do
