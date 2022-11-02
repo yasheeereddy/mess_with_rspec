@@ -23,6 +23,7 @@ Rails.application.routes.draw do
       resources :tasks, only: [:index, :show, :create, :destroy, :update]
       resources :categories, only: [:index, :show, :create, :destroy, :update]
       resources :sessions
+      resources :users, only: [:index, :show, :create, :destroy, :update]
     end
   end
 end
